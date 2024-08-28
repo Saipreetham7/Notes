@@ -66,4 +66,118 @@ When using SSL/TLS to secure internet communication, there are a few key concept
 
 When building internet-based applications and services, it’s important to understand how SSL/TLS works and to ensure that your application is designed to use SSL/TLS when transmitting sensitive data such as login credentials, payment information, and other personal data. You’ll also need to ensure that you obtain and maintain valid SSL/TLS certificates for your servers, and that you follow best practices for configuring and securing your SSL/TLS connections. By doing so, you can help protect your users’ data and ensure the integrity and confidentiality of your application’s communication over the internet.
 
+## Client Server Architecture
+![alt](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/How_the_Web_works/simple-client-server.png)
+
+- Clients are the typical web user's internet-connected devices (for example, your computer connected to your Wi-Fi, or your phone connected to your mobile network) and web-accessing software available on those devices (usually a web browser like Firefox or Chrome).
+
+- Servers are computers that store webpages, sites, or apps. When a client device wants to access a webpage, a copy of the webpage is downloaded from the server onto the client machine to be displayed in the user's web browser.
+
+## What is the difference between web page, website, web server, and search engine?
+
+### Web Page
+A document which can be displayed in a web browser such as Firefox, Google Chrome, Opera, Microsoft Edge, or Apple Safari. These are also often called just "pages."
+
+### Website
+A website is a collection of linked web pages (plus their associated resources) that share a unique domain name. Each web page of a given website provides explicit links—most of the time in the form of clickable portions of text—that allow the user to move from one page of the website to another.
+
+### Web Server
+A web server is a computer hosting one or more websites. "Hosting" means that all the web pages and their supporting files are available on that computer. The web server will send any web page from the website it is hosting to any user's browser, per user request.
+
+### Search Engine
+Search engines are a common source of confusion on the web. A search engine is a special kind of website that helps users find web pages from other websites.
+
+A browser is a piece of software that retrieves and displays web pages; a search engine is a website that helps people find web pages from other websites.
+
+# WHat is HTTP
+HTTP is a TCP/IP-based application layer communication protocol that standardizes how clients and servers communicate with each other.
+
+It defines how content is requested and transmitted across the internet. By application layer protocol, I mean that it’s simply an abstraction layer that standardizes how hosts (clients and servers) communicate.
+
+HTTP itself depends on TCP/IP to get requests and responses between the client and server. By default, TCP port 80 is used, but other ports can also be used. HTTPS, however, uses port 443.
+
+## What is an HTTP Request?
+An HTTP request is the way Internet communications platforms such as web browsers ask for the information they need to load a website.
+
+Each HTTP request made across the Internet carries with it a series of encoded data that carries different types of information. A typical HTTP request contains:
+1. HTTP version type
+2. a URL
+3. an HTTP method
+4. HTTP request headers
+5. Optional HTTP body.
+
+### What is an HTTP method?
+An HTTP method, sometimes referred to as an HTTP verb, indicates the action that the HTTP request expects from the queried server. For example, two of the most common HTTP methods are ‘GET’ and ‘POST’; a ‘GET’ request expects information back in return (usually in the form of a website), while a ‘POST’ request typically indicates that the client is submitting information to the web server (such as form information, e.g. a submitted username and password).
+
+### What are HTTP request headers?
+HTTP headers contain text information stored in key-value pairs, and they are included in every HTTP request (and response, more on that later). These headers communicate core information, such as what browser the client is using and what data is being requested.
+
+Example of HTTP request headers from Google Chrome's network tab:
+
+![alt](https://www.cloudflare.com/img/learning/ddos/glossary/hypertext-transfer-protocol-http/http-request-headers.png)
+
+### What is in an HTTP request body?
+The body of a request is the part that contains the ‘body’ of information the request is transferring. The body of an HTTP request contains any information being submitted to the web server, such as a username and password, or any other data entered into a form.
+
+### What is in an HTTP response?
+An HTTP response is what web clients (often browsers) receive from an Internet server in answer to an HTTP request. These responses communicate valuable information based on what was asked for in the HTTP request.
+
+A typical HTTP response contains:
+1. an HTTP status code
+2. HTTP response headers
+3. optional HTTP body
+
+#### What’s an HTTP status code?
+HTTP status codes are 3-digit codes most often used to indicate whether an HTTP request has been successfully completed. Status codes are broken into the following 5 blocks:
+
+- 1xx Informational
+- 2xx Success
+- 3xx Redirection
+- 4xx Client Error
+- 5xx Server Error
+
+The “xx” refers to different numbers between 00 and 99.
+
+#### What are HTTP response headers?
+Much like an HTTP request, an HTTP response comes with headers that convey important information such as the language and format of the data being sent in the response body.
+
+Example of HTTP response headers from Google Chrome's network tab:
+
+![alt](https://www.cloudflare.com/img/learning/ddos/glossary/hypertext-transfer-protocol-http/http-response-headers.png)
+
+#### What is in an HTTP response body?
+Successful HTTP responses to ‘GET’ requests generally have a body which contains the requested information. In most web requests, this is HTML data that a web browser will translate into a webpage.
+
+# Domain Names
+Domain names are a key part of the Internet infrastructure. They provide a human-readable address for any web server available on the Internet.
+
+Any Internet-connected computer can be reached through a public IP Address, either an IPv4 address (e.g. 192.0.2.172) or an IPv6 address (e.g., 2001:db8:8b73:0000:0000:8a2e:0370:1337).
+
+## Structure of domain names
+A domain name has a simple structure made of several parts (it might be one part only, two, three…), separated by dots and read from right to left:
+
+![alt](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Web_mechanics/What_is_a_domain_name/structure.png)
+
+### TLD (Top-Level Domain)
+TLDs tell users the general purpose of the service behind the domain name. The most generic TLDs (.com, .org, .net) don't require web services to meet any particular criteria, but some TLDs enforce stricter policies so it is clearer what their purpose is. For example:
+- Local TLDs such as .us, .fr, or .se can require the service to be provided in a given language or hosted in a certain country — they are supposed to indicate a resource in a particular language or country.
+- TLDs containing .gov are only allowed to be used by government departments.
+- The .edu TLD is only for use by educational and academic institutions.
+
+TLDs can contain special as well as latin characters. A TLD's maximum length is 63 characters, although most are around 2–3.
+
+### Label (or component)
+The labels are what follow the TLD. A label is a case-insensitive character sequence anywhere from one to sixty-three characters in length, containing only the letters A through Z, digits 0 through 9, and the '-' character (which may not be the first or last character in the label). a, 97, and hello-strange-person-16-how-are-you are all examples of valid labels.
+
+The label located right before the TLD is also called a Secondary Level Domain (SLD).
+
+A domain name can have many labels (or components). It is not mandatory nor necessary to have 3 labels to form a domain name. For instance, informatics.ed.ac.uk is a valid domain name. For any domain you control (e.g. mozilla.org), you can create "subdomains" with different content located at each, like developer.mozilla.org, support.mozilla.org, or bugzilla.mozilla.org.
+
+## How does a DNS request work?
+1. Type mozilla.org in your browser's location bar.
+2. Your browser asks your computer if it already recognizes the IP address identified by this domain name (using a local DNS cache). If it does, the name is translated to the IP address and the browser negotiates contents with the web server. End of story.
+3. If your computer does not know which IP is behind the mozilla.org name, it goes on to ask a DNS server, whose job is precisely to tell your computer which IP address matches each registered domain name.
+4. Now that the computer knows the requested IP address, your browser can negotiate contents with the web server.
+
+![alt](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Web_mechanics/What_is_a_domain_name/2014-10-dns-request2.png)
 
